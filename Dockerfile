@@ -1,23 +1,23 @@
-# Build stage
+# ---------- Build stage ----------
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy pom and source
-COPY pom.xml .
-COPY src ./src
+# Copy EVERYTHING into the build container
+# (pom.xml, src, .mvn, mvnw, etc)
+COPY . .
 
-# Build the jar (skip tests to speed up)
+# Build the jar (skip tests so Spring's default test doesn't break the build)
 RUN mvn -q -DskipTests clean package
 
-# Run stage
+# ---------- Run stage ----------
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 
-# Copy the jar from the build image
+# Copy the built jar from the previous stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Spring Boot listens on 8080 by default
+# Spring Boot uses 8080
 EXPOSE 8080
 
-# Start the app
+# Run the app
 ENTRYPOINT ["java","-jar","app.jar"]
