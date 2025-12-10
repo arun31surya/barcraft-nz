@@ -2,54 +2,52 @@ package com.barcraftnz.web;
 
 import com.barcraftnz.domain.Enquiry;
 import com.barcraftnz.repo.EnquiryRepository;
+import com.barcraftnz.service.EmailService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class WebController {
 
     private final EnquiryRepository enquiryRepository;
+    private final EmailService emailService;
 
-    public WebController(EnquiryRepository enquiryRepository) {
+    public WebController(EnquiryRepository enquiryRepository,
+                         EmailService emailService) {
         this.enquiryRepository = enquiryRepository;
+        this.emailService = emailService;
     }
 
-    // Home page – just return the template, no model needed
     @GetMapping("/")
-    public String showHome() {
+    public String home(Model model) {
+        model.addAttribute("enquiry", new Enquiry());
         return "index";
     }
 
-    // Handle form submit
     @PostMapping("/enquiry")
-    public String handleEnquiry(
-            @RequestParam String name,
-            @RequestParam String email,
-            @RequestParam(required = false) String phone,
-            @RequestParam(required = false, name = "date") String eventDate,
-            @RequestParam(required = false) String location,
-            @RequestParam(required = false) String guests,
-            @RequestParam(required = false) String details,
-            RedirectAttributes redirectAttributes
-    ) {
+    public String submitEnquiry(@Valid @ModelAttribute Enquiry enquiry,
+                                BindingResult result) {
+        if (result.hasErrors()) {
+            return "index";
+        }
 
-        Enquiry enquiry = new Enquiry();
-        enquiry.setName(name);
-        enquiry.setEmail(email);
-        enquiry.setPhone(phone);
-        enquiry.setDate(eventDate);
-        enquiry.setLocation(location);
-        enquiry.setGuests(guests);
-        enquiry.setDetails(details);
-
+        // Save to DB (what you already had)
         enquiryRepository.save(enquiry);
 
-        // flash attribute survives the redirect and shows the thank-you message
-        redirectAttributes.addFlashAttribute("sent", true);
+        // Send the email
+        emailService.sendEnquiryEmail(enquiry);
 
-        return "redirect:/";
+        // If you don’t have success.html, change this to "redirect:/"
+        return "redirect:/success";
+    }
+
+    @GetMapping("/success")
+    public String success() {
+        return "success"; // create success.html or adjust redirect above
     }
 }
