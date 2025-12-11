@@ -1,18 +1,19 @@
 package com.barcraftnz.service;
 
-import com.barcraftnz.domain.Enquiry;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import com.barcraftnz.domain.Enquiry;
 
 @Service
 public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    // This will be info@barcraft.co.nz (from your env var on Render)
-    @Value("${MAIL_USERNAME}")
+    // will be info@barcraft.co.nz, from application.properties/env
+    @Value("${spring.mail.username}")
     private String businessEmail;
 
     public EmailService(JavaMailSender mailSender) {
@@ -22,10 +23,10 @@ public class EmailService {
     public void sendEnquiryEmail(Enquiry enquiry) {
         SimpleMailMessage message = new SimpleMailMessage();
 
-        // Gmail/Workspace usually requires From to be the authenticated account
+        // email goes TO your business inbox
+        message.setTo(businessEmail);
+        // from your business address as well
         message.setFrom(businessEmail);
-        message.setTo(businessEmail);              // you receive the enquiry here
-        message.setReplyTo(enquiry.getEmail());    // so you can reply directly to the customer
 
         message.setSubject("New BarCraft NZ enquiry from " + enquiry.getName());
 
@@ -47,7 +48,11 @@ public class EmailService {
         );
 
         message.setText(body);
+        try {
+            mailSender.send(message);
+        } catch (MailException ex) {
+            System.err.println("Failed to send enquiry email:"+ex.getMessage());
+        }
 
-        mailSender.send(message);
     }
 }

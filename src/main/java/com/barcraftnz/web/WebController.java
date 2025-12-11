@@ -7,9 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class WebController {
@@ -17,14 +15,13 @@ public class WebController {
     private final EnquiryRepository enquiryRepository;
     private final EmailService emailService;
 
-    public WebController(EnquiryRepository enquiryRepository,
-                         EmailService emailService) {
+    public WebController(EnquiryRepository enquiryRepository, EmailService emailService) {
         this.enquiryRepository = enquiryRepository;
         this.emailService = emailService;
     }
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String showHome(Model model) {
         model.addAttribute("enquiry", new Enquiry());
         return "index";
     }
@@ -36,18 +33,18 @@ public class WebController {
             return "index";
         }
 
-        // Save to DB (what you already had)
+        // Save in DB (H2) if you want
         enquiryRepository.save(enquiry);
 
-        // Send the email
+        // Send email to info@barcraft.co.nz
         emailService.sendEnquiryEmail(enquiry);
 
-        // If you don’t have success.html, change this to "redirect:/"
         return "redirect:/success";
     }
 
     @GetMapping("/success")
-    public String success() {
-        return "success"; // create success.html or adjust redirect above
+    public String showSuccess() {
+        return "success";   // create a simple success.html page
     }
+
 }

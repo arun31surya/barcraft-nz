@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enquiry received | BarCraft NZ</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="success-page">
+    <div class="success-card">
+        <h1>Thank you for your enquiry 🍸</h1>
+        <p>
+            We’ve received your details and will get back to you shortly
+            to confirm availability and pricing.
+        </p>
+
+        <p class="success-note">
+            If it’s urgent, you can also message us on WhatsApp using the button on the homepage.
+        </p>
+
+        <a th:href="@{ / }" class="success-btn">
+            Back to BarCraft NZ
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
