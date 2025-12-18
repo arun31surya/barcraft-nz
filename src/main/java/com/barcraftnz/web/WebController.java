@@ -7,7 +7,9 @@ import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class WebController {
@@ -27,16 +29,11 @@ public class WebController {
     }
 
     @PostMapping("/enquiry")
-    public String submitEnquiry(@Valid @ModelAttribute Enquiry enquiry,
+    public String submitEnquiry(@Valid @ModelAttribute("enquiry") Enquiry enquiry,
                                 BindingResult result) {
-        if (result.hasErrors()) {
-            return "index";
-        }
+        if (result.hasErrors()) return "index";
 
-        // Save in DB (H2) if you want
         enquiryRepository.save(enquiry);
-
-        // Send email to info@barcraft.co.nz
         emailService.sendEnquiryEmail(enquiry);
 
         return "redirect:/success";
@@ -44,7 +41,6 @@ public class WebController {
 
     @GetMapping("/success")
     public String showSuccess() {
-        return "success";   // create a simple success.html page
+        return "success";
     }
-
 }
