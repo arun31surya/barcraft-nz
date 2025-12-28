@@ -362,6 +362,37 @@
       <p th:if="${sent}" class="section-note">
         Thanks, your enquiry has been received. We’ll get back to you soon.
       </p>
+      <!-- GOOGLE REVIEWS -->
+      <section class="section section-dark" id="google-reviews">
+        <div class="section-inner reviews-qr">
+
+          <h2>Leave a Google Review</h2>
+
+          <p class="section-lead">
+            If you liked the BarCraft NZ service, a quick Google review really helps us grow.
+          </p>
+
+          <!-- Button -->
+          <div class="review-button-wrap">
+            <a class="btn btn-secondary"
+               href="https://g.page/r/CXPO9m0-5CeUEBM/review"
+               target="_blank" rel="noopener">
+              Open Google Reviews
+            </a>
+          </div>
+
+          <!-- QR Code -->
+          <div class="qr-wrap">
+            <img src="/images/google-review-qr.png"
+                 alt="BarCraft NZ Google Review QR Code"
+                 class="qr-img">
+            <p class="section-note">
+              Scan to leave a review
+            </p>
+          </div>
+
+        </div>
+      </section>
 
       <form class="contact-form"
             th:action="@{/enquiry}"

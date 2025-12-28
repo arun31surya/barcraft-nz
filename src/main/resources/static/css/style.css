@@ -680,3 +680,51 @@ textarea {
 
 .success-card p {
     font-size: 0.95r…
+    .reviews-qr {
+      margin: 2rem auto 1.5rem;
+      max-width: 720px;
+      text-align: center;
+      padding: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(0,0,0,0.25);
+    }
+
+    .qr-wrap {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .qr-img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+    }
+    .reviews-qr {
+      text-align: center;
+    }
+
+    .review-button-wrap {
+      margin-top: 1.5rem;
+      margin-bottom: 2rem; /* THIS creates the gap you want */
+    }
+
+    .qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .qr-img {
+      width: 180px;
+      max-width: 70%;
+      height: auto;
+      border-radius: 10px;
+      background: #fff;
+      padding: 10px;
+    }
