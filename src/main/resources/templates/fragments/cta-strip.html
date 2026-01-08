@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="ctaStrip(titleText, bodyText, primaryHref, primaryText, secondaryHref, secondaryText)">
+  <section class="cta-strip">
+    <div class="cta-strip-inner">
+      <div class="cta-strip-text">
+        <h2 th:text="${titleText}">Ready to book?</h2>
+        <p th:text="${bodyText}">Tell us your date and guest count. We’ll reply fast.</p>
+      </div>
+
+      <div class="cta-strip-actions">
+        <a class="btn btn-primary" th:href="${primaryHref}" th:text="${primaryText}">Check Availability</a>
+        <a class="btn btn-secondary" th:href="${secondaryHref}" th:text="${secondaryText}">View Packages</a>
+      </div>
+    </div>
+  </section>
+</th:block>
+
+</html>

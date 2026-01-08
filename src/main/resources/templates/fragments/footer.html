@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<th:block th:fragment="siteFooter">
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <p>
+        © <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}">2026</span>
+        BarCraft NZ. All rights reserved.
+      </p>
+
+      <p class="footer-links">
+        <a href="https://instagram.com/barcraft_nz" target="_blank" rel="noopener">Instagram</a>
+        <span>·</span>
+        <a href="mailto:info@barcraft.co.nz">info@barcraft.co.nz</a>
+        <span>·</span>
+        <a href="https://wa.me/64272613669" target="_blank" rel="noopener">WhatsApp</a>
+      </p>
+
+      <p class="footer-note">
+        BYO alcohol. Glassware available. Nationwide service.
+        Auckland-focused pages for search.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ✅ Scripts load at end of body -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script th:src="@{/js/main.js}"></script>
+</th:block>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{fragments/header :: head(
+  title='Corporate Event Bar Auckland | Professional Mobile Bar | BarCraft NZ',
+  description='Corporate event bar service in Auckland. Premium mobile bar setup, professional bartender service, glassware available. BYO alcohol. Request a quote.'
+)}"></th:block>
+
+<body>
+<th:block th:replace="~{fragments/header :: siteHeader(active='services')}"></th:block>
+
+<main>
+    <section class="section section-dark">
+        <div class="section-inner">
+            <h1>Corporate Event Bar Auckland</h1>
+            <p class="section-lead">
+                Corporate events need clean execution. We run a professional bar experience that matches your brand.
+                BYO alcohol. Glassware available.
+            </p>
+
+            <div class="content-card">
+                <h2>What makes it corporate-ready</h2>
+                <ul>
+                    <li>Professional presentation and service flow</li>
+                    <li>Fast service with a focused menu</li>
+                    <li>Setup and pack-down handled properly</li>
+                    <li>Glassware options based on event size</li>
+                </ul>
+            </div>
+
+            <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
+        titleText='Need a corporate quote?',
+        bodyText='Send date, location, guest count, and event format. We reply fast.',
+        primaryHref='/#enquiry',
+        primaryText='Check Availability',
+        secondaryHref='/gallery',
+        secondaryText='See Gallery'
+      )}"></th:block>
+        </div>
+    </section>
+</main>
+
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
+</body>
+</html>

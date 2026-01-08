@@ -1,495 +1,383 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <title>BarCraft NZ | Premium Mobile Bar</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-        content="BarCraft NZ - Premium mobile bar and bartender service for private events, birthdays and house parties in Auckland.">
+<th:block th:replace="~{fragments/header :: head(
+  title='Premium Mobile Bar Service in Auckland | BarCraft NZ',
+  description='BarCraft NZ provides a premium mobile bar setup and professional bartender service for private events in Auckland. BYO alcohol, glassware available. Request a fast quote.'
+)}"></th:block>
 
-  <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
 <body>
-
-<header class="hero">
-  <div class="hero-inner">
-    <img src="/images/logo.png" alt="BarCraft NZ Logo" class="hero-logo">
-
-    <h1 class="hero-title">Premium Mobile Bar for Private Events in NZ</h1>
-    <p class="hero-subtitle">
-      House parties · Birthdays · Private premium events
-    </p>
-
-    <div class="hero-cta">
-      <a class="btn btn-primary"
-         href="https://wa.me/64272613669"
-         target="_blank" rel="noopener">
-        Book Now on WhatsApp
-      </a>
-      <a class="btn btn-secondary"
-         href="mailto:info@barcraft.co.nz">
-        Email an Enquiry
-      </a>
-    </div>
-  </div>
-</header>
+<th:block th:replace="~{fragments/header :: siteHeader(active='home')}"></th:block>
 
 <main>
 
-  <!-- WHY SECTION -->
-  <section class="section section-dark" id="why">
-    <div class="section-inner">
-      <h2>Why BarCraft NZ</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Premium Setup</h3>
-          <p>
-            Flight-case mobile bar with black and gold branding, quality glassware and professional tools.
-            Looks sharp in photos, not like a folding table.
-          </p>
+  <!-- 1) HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Premium Mobile Bar Service in Auckland</h1>
+        <p class="hero-subtitle">
+          BYO alcohol. We bring the premium bar setup, glassware, tools, ice planning support, and pro service.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#enquiry">Check Availability</a>
+          <a class="btn btn-secondary" th:href="@{/packages}">View Packages</a>
         </div>
-        <div class="card">
-          <h3>Professional Service</h3>
-          <p>
-            Experienced bartender focused on clean, efficient service and good guest experience from first
-            pour to last call.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Flexible &amp; BYO Friendly</h3>
-          <p>
-            You can supply your own alcohol or run a non-alcoholic menu.
-            We handle the bar, tools, ice and service.
-          </p>
-        </div>
+
+        <p class="hero-note">
+          Nationwide service available. Auckland pages are for local search and faster bookings.
+        </p>
+      </div>
+
+      <div class="hero-media">
+        <img src="/images/bartender-hero.jpg"
+             alt="BarCraft NZ bartender and premium setup"
+             class="hero-img">
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
+  <!-- 2) REVIEWS SNIPPET -->
+  <section class="section section-dark">
     <div class="section-inner">
-      <h2>Services &amp; Packages</h2>
-      <div class="cards cards-vertical">
-        <div class="card">
-          <h3>House Party Bar</h3>
-          <p>Perfect for 18ths, 21sts and small home gatherings.</p>
-          <ul>
-            <li>Mobile bar setup</li>
-            <li>Bartender for your event</li>
-            <li>Basic glassware &amp; bar tools</li>
-            <li>Mixers and garnishes by agreement</li>
-          </ul>
-          <p class="card-note">Ideal for 20–40 guests.</p>
-        </div>
+      <h2>Trusted for Private Events</h2>
+      <p class="section-lead">A few quick words from clients. Replace these with real reviews anytime.</p>
 
-        <div class="card">
-          <h3>Premium Private Event</h3>
-          <p>For engagement parties, milestone birthdays and styled private events.</p>
-          <ul>
-            <li>Styled bar setup with BarCraft branding</li>
-            <li>Custom mocktail / cocktail menu planning</li>
-            <li>Ice, garnishes and barware included</li>
-            <li>Pre-event planning call</li>
-          </ul>
-          <p class="card-note">Ideal for 30–80 guests.</p>
+      <div class="review-grid">
+        <div class="review-card">
+          <p class="review-text">“The setup looked premium in photos. Service was clean, fast, and professional.”</p>
+          <p class="review-meta">– Jacob, Auckland</p>
         </div>
-
-        <div class="card">
-          <h3>Bartender Only</h3>
-          <p>Already have a bar or venue? Hire BarCraft to run it properly.</p>
-          <ul>
-            <li>Professional bartender with tools</li>
-            <li>Setup and pack-down assistance</li>
-          </ul>
-          <p class="card-note">Minimum booking: 3 hours.</p>
+        <div class="review-card">
+          <p class="review-text">“Arrived early, ran the bar smoothly, and kept everything tidy.”</p>
+          <p class="review-meta">– Priya, House Party</p>
+        </div>
+        <div class="review-card">
+          <p class="review-text">“Guests kept talking about the cocktails and how ‘hotel-level’ the bar looked.”</p>
+          <p class="review-meta">– Sam, Private Event</p>
         </div>
       </div>
-      <p class="section-note">
-        All packages are BYO alcohol friendly. Full non-alcoholic events available on request.
-      </p>
+
+      <!-- Optional: Google review QR section -->
+      <div class="reviews-qr">
+        <h3 class="reviews-qr-title">Leave a Google Review</h3>
+        <p class="section-lead" style="margin-top:0.5rem;">
+          If you liked the BarCraft NZ service, a quick Google review helps us grow.
+        </p>
+
+        <div class="review-button-wrap">
+          <a class="btn btn-secondary"
+             href="https://g.page/r/CXPO9m0-5CeUEBM/review"
+             target="_blank" rel="noopener">
+            Open Google Reviews
+          </a>
+        </div>
+
+        <div class="qr-wrap">
+          <img src="/images/google-review-qr.png"
+               alt="BarCraft NZ Google Review QR Code"
+               class="qr-img">
+          <p class="section-note qr-note">Scan to leave a review</p>
+        </div>
+      </div>
+
     </div>
   </section>
-  <!-- PRICING GUIDE -->
-  <section class="section section-dark" id="pricing">
+
+  <!-- 3) CHOOSE YOUR EVENT -->
+  <section class="section">
     <div class="section-inner">
-      <h2>Simple Pricing Guide</h2>
-      <p class="section-lead">
-        Every event is different, but this gives you a realistic idea of what BarCraft NZ costs.
-        For an exact quote, send your date, location and guest count.
-      </p>
+      <h2>Choose Your Event</h2>
+      <p class="section-lead">Pick what you’re planning. Each page is designed to convert.</p>
+
+      <div class="tiles">
+        <a class="tile" th:href="@{/mobile-bar-auckland}">
+          <h3>Mobile Bar Auckland</h3>
+          <p>Premium bar setup + bartender for private events.</p>
+        </a>
+
+        <a class="tile" th:href="@{/bartender-for-house-party-auckland}">
+          <h3>House Party Bartender</h3>
+          <p>18ths, 21sts, birthdays. Fast service, clean setup.</p>
+        </a>
+
+        <a class="tile" th:href="@{/wedding-bar-service-auckland}">
+          <h3>Wedding Bar Service</h3>
+          <p>Styled bar, glassware, service flow that works.</p>
+        </a>
+
+        <a class="tile" th:href="@{/corporate-event-bar-auckland}">
+          <h3>Corporate Event Bar</h3>
+          <p>Professional execution for brand events and teams.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) PACKAGES PREVIEW -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <h2>Packages</h2>
+      <p class="section-lead">Simple, premium options. BYO alcohol. Glassware available.</p>
 
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3>House Party Bar</h3>
           <p class="pricing-range">From approx. $280 + hourly</p>
           <ul>
-            <li>Ideal for 18ths, 21sts &amp; home gatherings</li>
-            <li>Mobile bar, bartender, basic glassware</li>
+            <li>Mobile bar setup + bartender</li>
+            <li>Glassware available</li>
             <li>BYO alcohol friendly</li>
           </ul>
-          <p class="pricing-note">Perfect for 20–40 guests.</p>
         </div>
 
         <div class="pricing-card pricing-card-highlight">
           <h3>Premium Private Event</h3>
           <p class="pricing-range">From approx. $450 + hourly</p>
           <ul>
-            <li>Styled black &amp; gold bar setup</li>
-            <li>Custom drink / mocktail menu planning</li>
-            <li>Ice, garnishes &amp; barware included</li>
+            <li>Styled black &amp; gold bar look</li>
+            <li>Menu planning support</li>
+            <li>Glassware included by quote</li>
           </ul>
-          <p class="pricing-note">Best for 30–80 guests.</p>
         </div>
 
         <div class="pricing-card">
           <h3>Bartender Only</h3>
           <p class="pricing-range">From $50–$70 per hour</p>
           <ul>
-            <li>Professional bartender with tools</li>
-            <li>Use your own bar or venue</li>
-            <li>Minimum 3-hour booking</li>
+            <li>You provide the bar/venue setup</li>
+            <li>We run service professionally</li>
+            <li>Min 3-hour booking</li>
           </ul>
-          <p class="pricing-note">Good for venues with their own bar.</p>
         </div>
       </div>
 
-      <p class="section-note">
-        Travel within wider Auckland is usually included. For out-of-town events, travel costs may apply.
-      </p>
-    </div>
-  </section>
-  <!-- FAQ -->
-  <section class="section section-dark" id="faq">
-    <div class="section-inner">
-      <h2>Questions We Get All the Time</h2>
-
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <h3>Do you supply the alcohol?</h3>
-          <p>
-            At the moment BarCraft NZ is set up as a BYO-friendly mobile bar.
-            You supply the alcohol and we handle the bar setup, ice, glassware, tools and service.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Which areas do you cover?</h3>
-          <p>
-            We are based in Auckland and can travel across most suburbs.
-            Travel fees may apply for events outside central Auckland.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>How many hours is a standard booking?</h3>
-          <p>
-            Most bookings are 3–5 hours of service, plus our own setup and pack-down time.
-            Longer events are no problem, we’ll quote based on your timings.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Can you do non-alcoholic / family-friendly events?</h3>
-          <p>
-            Yes. We can run a fully non-alcoholic bar with mocktails, juices and signature drinks that still look premium.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Do you bring glassware and ice?</h3>
-          <p>
-            Yes, we can include glassware, ice and garnishes in your package.
-            This will be confirmed when we quote your event.
-          </p>
-        </div>
-
+      <div class="center" style="margin-top:18px;">
+        <a class="btn btn-primary" href="#enquiry">Get a Quote</a>
+        <a class="btn btn-secondary" th:href="@{/packages}">See Full Packages</a>
       </div>
     </div>
   </section>
 
-
-  <!-- GALLERY -->
-  <section class="section section-dark" id="gallery">
-    <div class="section-inner">
-      <h2>Event Gallery</h2>
-      <p class="section-lead">
-        A glimpse of the BarCraft NZ setup. More photos from upcoming events will be added after each booking.
-      </p>
-
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="/images/portable-bar-1.jpg" alt="BarCraft NZ portable bar"></div>
-        <div class="gallery-item"><img src="/images/portable-bar-2.jpg.JPG" alt="BarCraft NZ portable bar 2"></div>
-        <div class="gallery-item"><img src="/images/portable-bar-3.jpg" alt="BarCraft NZ bar close-up"></div>
-        <div class="gallery-item"><img src="/images/portable-bar-4.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-5.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-6.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-7.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-8.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-9.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-10.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-11.jpg" alt=""></div>
-        <div class="gallery-item"><img src="/images/portable-bar-12.jpg" alt=""></div>
-      </div>
-    </div>
-  </section>
-  <!-- REVIEWS -->
-  <section class="section" id="reviews">
-    <div class="section-inner">
-      <h2>What Clients Say</h2>
-      <p class="section-lead">
-        A few words from people who’ve booked BarCraft NZ for their private events.
-
-      </p>
-
-      <div class="review-grid">
-        <div class="review-card">
-          <p class="review-text">
-            “The bar setup looked incredible in our photos. Super professional service, our guests loved it.”
-          </p>
-          <p class="review-meta">– Jacob, 21st in Henderson</p>
-        </div>
-
-        <div class="review-card">
-          <p class="review-text">
-            “Easy communication from start to finish. He arrived early, set up quietly and ran the bar perfectly all night.”
-          </p>
-          <p class="review-meta">– J. Thompson, house party in Mt Roskill</p>
-        </div>
-
-        <div class="review-card">
-          <p class="review-text">
-            “The black and gold bar looked like something from a hotel, not a normal home party. Will book again.”
-          </p>
-          <p class="review-meta">– M. Patel, private event in Epsom</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- BARTENDER HIGHLIGHT -->
-  <section class="section" id="bartender">
-    <div class="section-inner bartender-highlight">
-      <img src="/images/bartender-hero.jpg"
-           alt="BarCraft NZ bartender mixing drinks"
-           class="bartender-photo">
-
-      <p class="bartender-tagline">
-        BADASS BARTENDER STYLE · BARTENDING SINCE 2006
-      </p>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section section-dark" id="how">
+  <!-- 5) HOW IT WORKS -->
+  <section class="section">
     <div class="section-inner">
       <h2>How It Works</h2>
+
       <div class="steps">
         <div class="step">
           <span class="step-number">1</span>
           <h3>Enquire</h3>
-          <p>Send your date, location, guest count and event type.</p>
+          <p>Send date, location, guest count, and event type.</p>
         </div>
         <div class="step">
           <span class="step-number">2</span>
-          <h3>Plan Your Menu</h3>
-          <p>We confirm your package, plan the drinks and lock in timings.</p>
+          <h3>Plan</h3>
+          <p>We confirm package, service time, glassware, and menu direction.</p>
         </div>
         <div class="step">
           <span class="step-number">3</span>
           <h3>We Run the Bar</h3>
-          <p>We arrive early, set up the bar, serve and leave the space clean.</p>
+          <p>We arrive early, set up clean, serve fast, and pack down properly.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- WHAT YOU GET -->
-  <section class="section" id="what-you-get">
+
+  <!-- 6) GALLERY -->
+  <section class="section section-dark">
     <div class="section-inner">
-      <h2>What You Get With BarCraft NZ</h2>
+      <h2>Gallery</h2>
+      <p class="section-lead">Real setup shots. Premium look, built for photos.</p>
 
-      <div class="benefits-grid">
-
-        <div class="benefit">
-          <div class="benefit-icon">🍸</div>
-          <h3>Mobile Flight-Case Bar</h3>
-          <p>Premium black bar that looks sharp in photos, not a folding table or plastic trestle.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/images/portable-bar-1.jpg" alt="Portable bar setup 1">
         </div>
 
-        <div class="benefit">
-          <div class="benefit-icon">🧊</div>
-          <h3>Glassware, Ice & Tools</h3>
-          <p>We can supply glassware, ice, bar tools and garnish station depending on your package.</p>
+        <!-- IMPORTANT: keep exact filename casing -->
+        <div class="gallery-item">
+          <img src="/images/portable-bar-2.jpg.JPG" alt="Portable bar setup 2">
         </div>
 
-        <div class="benefit">
-          <div class="benefit-icon">👨‍🍳</div>
-          <h3>Experienced Bartender</h3>
-          <p>Professional, tidy and efficient service so you can actually enjoy your own party.</p>
+        <div class="gallery-item">
+          <img src="/images/portable-bar-3.jpg" alt="Portable bar setup 3">
         </div>
 
-        <div class="benefit">
-          <div class="benefit-icon">📋</div>
-          <h3>Menu Planning Support</h3>
-          <p>Help with planning drink quantities, mixers and a simple menu that works for your crowd.</p>
+        <!-- Change to /images/portable-bar-4.JPG if your actual file is .JPG -->
+        <div class="gallery-item">
+          <img src="/images/portable-bar-4.jpg" alt="Portable bar setup 4">
         </div>
 
-        <div class="benefit">
-          <div class="benefit-icon">🧽</div>
-          <h3>Setup & Clean Pack-Down</h3>
-          <p>We arrive early, set up the bar, run service and leave the bar area clean when we leave.</p>
+        <div class="gallery-item">
+          <img src="/images/bartender-hero.jpg" alt="Bartender service">
         </div>
+      </div>
 
-        <div class="benefit">
-          <div class="benefit-icon">📍</div>
-          <h3>Auckland-Wide</h3>
-          <p>Based in Auckland with the ability to travel to most suburbs for private events.</p>
-        </div>
-
+      <div class="center" style="margin-top:18px;">
+        <a class="btn btn-secondary" th:href="@{/gallery}">View Full Gallery</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
+  <!-- 7) FAQ -->
+  <section class="section">
+    <div class="section-inner">
+      <h2>FAQ</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Do you supply alcohol?</h3>
+          <p>No, it’s BYO alcohol. We guide you on quantities and what to buy if needed.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you provide glassware?</h3>
+          <p>Yes. Glassware is available and can be included based on your package and guest count.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you only work in Auckland?</h3>
+          <p>No, you can book BarCraft NZ nationwide. Auckland is the main base.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long is a normal booking?</h3>
+          <p>Most events are 3 to 5 hours service, plus setup and pack-down time.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you do non-alcoholic events?</h3>
+          <p>Yes. We can run a premium mocktail bar for family-friendly events.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What do I need to provide?</h3>
+          <p>Usually alcohol (BYO), and a small space for the bar setup. We bring tools and setup.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How far in advance should I book?</h3>
+          <p>Weekends book out first. If your date matters, message early.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you customize a drink menu?</h3>
+          <p>Yes. We can create a tight menu that works for your crowd and speeds up service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
+    titleText='Want a fast quote?',
+    bodyText='Send your date, suburb, and guest count. We reply with a clean package and price.',
+    primaryHref='#enquiry',
+    primaryText='Check Availability',
+    secondaryHref='/packages',
+    secondaryText='View Packages'
+  )}"></th:block>
+
+  <!-- 8) FINAL CTA: ENQUIRY FORM (ONLY ONCE, FIXED) -->
+  <section class="section section-dark" id="enquiry">
     <div class="section-inner">
       <h2>Request a Quote</h2>
-      <p class="section-lead">
-        Tell us about your event and we’ll come back with a simple, clear package.
-      </p>
-
-      <p th:if="${sent}" class="section-note">
-        Thanks, your enquiry has been received. We’ll get back to you soon.
-      </p>
-      <!-- GOOGLE REVIEWS -->
-      <section class="section section-dark" id="google-reviews">
-        <div class="section-inner reviews-qr">
-
-          <h2>Leave a Google Review</h2>
-
-          <p class="section-lead">
-            If you liked the BarCraft NZ service, a quick Google review really helps us grow.
-          </p>
-
-          <!-- Button -->
-          <div class="review-button-wrap">
-            <a class="btn btn-secondary"
-               href="https://g.page/r/CXPO9m0-5CeUEBM/review"
-               target="_blank" rel="noopener">
-              Open Google Reviews
-            </a>
-          </div>
-
-          <!-- QR Code -->
-          <div class="qr-wrap">
-            <img src="/images/google-review-qr.png"
-                 alt="BarCraft NZ Google Review QR Code"
-                 class="qr-img">
-            <p class="section-note">
-              Scan to leave a review
-            </p>
-          </div>
-
-        </div>
-      </section>
+      <p class="section-lead">Tell us your event details. We’ll reply with a simple, clear package.</p>
 
       <form class="contact-form"
+            id="enquiryForm"
             th:action="@{/enquiry}"
-            method="post">
+            method="post"
+            th:object="${enquiry}">
 
+        <!-- ROW 1 -->
         <div class="form-row">
           <label>
             Name
-            <input type="text" name="name" required>
+            <input type="text" th:field="*{name}" required>
           </label>
 
           <label>
             Email
-            <input type="email" name="email" required>
+            <input type="email" th:field="*{email}" required>
           </label>
         </div>
 
+        <!-- ROW 2 -->
         <div class="form-row">
           <label>
             Mobile
-            <input type="tel" name="phone">
+            <input type="tel" th:field="*{phone}" required>
           </label>
 
           <label>
             Event Date
-            <input type="text" name="date" placeholder="DD/MM/YYYY">
+            <input type="text"
+                   th:field="*{date}"
+                   class="js-date"
+                   placeholder="Select a date"
+                   autocomplete="off"
+                   inputmode="none">
           </label>
         </div>
 
+        <!-- ROW 3 -->
         <div class="form-row">
           <label>
             Location / Suburb
-            <input type="text" name="location">
+            <input type="text" th:field="*{location}" required>
           </label>
 
           <label>
             Guests
-            <select name="guests">
-              <option value="">Select</option>
-              <option>0–20</option>
-              <option>20–40</option>
-              <option>40–60</option>
-              <option>60+</option>
+
+            <div class="price-estimate" id="priceEstimate" aria-live="polite">
+              <div class="price-estimate-title">Estimated price</div>
+              <div class="price-estimate-value" id="priceEstimateValue">
+                Select guest count to see estimate
+              </div>
+              <div class="price-estimate-note" id="priceEstimateNote">
+                BYO alcohol. Glassware available. Final quote depends on hours, menu, and travel.
+              </div>
+            </div>
+
+            <select id="guestsSelect" th:field="*{guests}" required>
+              <option value="">Select guest count</option>
+              <option value="0-20">0–20</option>
+              <option value="20-40">20–40</option>
+              <option value="40-60">40–60</option>
+              <option value="60+">60+</option>
             </select>
           </label>
         </div>
 
-        <label>
-          Event Type &amp; Details
-          <textarea name="details" rows="4"
-                    placeholder="18th / 21st / birthday / private event, timings, special requests…"></textarea>
-        </label>
+        <!-- MESSAGE -->
+        <div class="form-row">
+          <label class="full">
+            Event Type &amp; Details
+            <textarea th:field="*{details}" id="detailsField" required maxlength="10000"
+                      placeholder="Event type, hours, special requests"></textarea>
+          </label>
+        </div>
 
-        <button type="submit" class="btn btn-primary btn-full">
-          Send Enquiry
-        </button>
-        <p class="section-note">
-          Prefer WhatsApp? Message us directly at
-          <a href="https://wa.me/64272613669" target="_blank" rel="noopener">+64 27 261 3669</a>.
+        <!-- SUBMIT -->
+        <div class="form-actions">
+          <div id="enquiryStatus" class="form-status" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary btn-full">Send Enquiry</button>
+        </div>
+
+        <p class="section-note center" style="margin-top:14px;">
+          Prefer WhatsApp?
+          <a href="https://wa.me/64272613669" target="_blank" rel="noopener">Message +64 27 261 3669</a>
         </p>
       </form>
-      <p class="section-note" style="text-align:center; margin-top:1.4rem;">
-        Want to see a sample cocktail / mocktail list?
-        <a href="/files/barcraft-sample-menu.pdf" target="_blank" rel="noopener">
-          Download sample menu (PDF)
-        </a>
-      </p>
-
-      <p class="section-note" style="text-align:center;">
-        Follow our latest setups on
-        <a href="https://instagram.com/barcraft_nz" target="_blank" rel="noopener">Instagram</a>
-        or message us on
-        <a href="https://wa.me/64272613669" target="_blank" rel="noopener">WhatsApp</a>.
-      </p>
-
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <p>© <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}">2025</span>
-      BarCraft NZ. All rights reserved.</p>
-    <p>
-      Instagram: <a href="https://instagram.com/barcraft_nz" target="_blank" rel="noopener">@barcraft_nz</a> ·
-      Email: <a href="mailto:info@barcraft.co.nz">info@barcraft.co.nz</a>
-    </p>
-  </div>
-</footer>
-
-<!-- LIGHTBOX OVERLAY -->
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-image" src="" alt="Event photo">
-</div>
-
-<script th:src="@{/js/main.js}"></script>
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
 </body>
 </html>

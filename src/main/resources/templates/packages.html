@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{fragments/header :: head(
+  title='Packages | BarCraft NZ',
+  description='Explore BarCraft NZ packages for house parties, private events, weddings, and corporate events. BYO alcohol. Glassware available.'
+)}"></th:block>
+
+<body>
+<th:block th:replace="~{fragments/header :: siteHeader(active='packages')}"></th:block>
+
+<main>
+    <section class="section">
+        <div class="section-inner">
+            <h1>Packages</h1>
+            <p class="section-lead">BYO alcohol. Glassware available. Nationwide service, Auckland base.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>House Party Bar</h3>
+                    <p class="pricing-range">From approx. $280 + hourly</p>
+                    <ul>
+                        <li>Mobile bar setup + bartender</li>
+                        <li>Fast, tidy service</li>
+                        <li>Glassware available</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card pricing-card-highlight">
+                    <h3>Premium Private Event</h3>
+                    <p class="pricing-range">From approx. $450 + hourly</p>
+                    <ul>
+                        <li>Styled premium look</li>
+                        <li>Menu planning support</li>
+                        <li>Glassware included by quote</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Bartender Only</h3>
+                    <p class="pricing-range">From $50–$70 per hour</p>
+                    <ul>
+                        <li>You provide bar/venue setup</li>
+                        <li>We bring tools + run service</li>
+                        <li>Min 3-hour booking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
+        titleText='Want a quote today?',
+        bodyText='Send your date, location, guest count, and event type.',
+        primaryHref='/#enquiry',
+        primaryText='Check Availability',
+        secondaryHref='/gallery',
+        secondaryText='View Gallery'
+      )}"></th:block>
+        </div>
+    </section>
+</main>
+
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
+</body>
+</html>

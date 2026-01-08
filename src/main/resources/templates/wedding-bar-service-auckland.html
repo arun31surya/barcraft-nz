@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{fragments/header :: head(
+  title='Wedding Bar Service Auckland | BarCraft NZ',
+  description='Wedding bar service in Auckland with a premium mobile bar setup and professional bartender. BYO alcohol, glassware available. Request a quote.'
+)}"></th:block>
+
+<body>
+<th:block th:replace="~{fragments/header :: siteHeader(active='services')}"></th:block>
+
+<main>
+  <section class="section">
+    <div class="section-inner">
+      <h1>Wedding Bar Service Auckland</h1>
+      <p class="section-lead">
+        A premium bar that fits your wedding style, with service flow that keeps guests happy.
+        BYO alcohol. Glassware available.
+      </p>
+
+      <div class="content-card">
+        <h2>Wedding-friendly execution</h2>
+        <ul>
+          <li>Styled premium setup for photos</li>
+          <li>Simple menu planning to avoid queues</li>
+          <li>Glassware options by guest count</li>
+          <li>Setup and pack-down with minimal disruption</li>
+        </ul>
+
+        <h2>Perfect for</h2>
+        <ul>
+          <li>Receptions, engagement parties, bridal events</li>
+          <li>Small and medium weddings</li>
+          <li>Private venues and home weddings</li>
+        </ul>
+      </div>
+
+      <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
+        titleText='Want a wedding quote?',
+        bodyText='Send your date, venue suburb, guest count, and service time.',
+        primaryHref='/#enquiry',
+        primaryText='Check Availability',
+        secondaryHref='/packages',
+        secondaryText='View Packages'
+      )}"></th:block>
+    </div>
+  </section>
+</main>
+
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
+</body>
+</html>

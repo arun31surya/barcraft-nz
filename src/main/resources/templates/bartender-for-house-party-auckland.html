@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{fragments/header :: head(
+  title='Bartender for House Party Auckland | BarCraft NZ',
+  description='Hire a professional bartender for your Auckland house party. BYO alcohol, glassware available. Fast quote and premium service.'
+)}"></th:block>
+
+<body>
+<th:block th:replace="~{fragments/header :: siteHeader(active='services')}"></th:block>
+
+<main>
+    <section class="section section-dark">
+        <div class="section-inner">
+            <h1>Bartender for House Party Auckland</h1>
+            <p class="section-lead">
+                Clean, fast service for 18ths, 21sts, birthdays, and home gatherings.
+                BYO alcohol, we handle the bar setup and service.
+            </p>
+
+            <div class="content-card">
+                <h2>How we keep house parties smooth</h2>
+                <ul>
+                    <li>Tight drink menu options for speed</li>
+                    <li>Proper setup, tools, and pack-down</li>
+                    <li>Glassware available (quoted per guest count)</li>
+                </ul>
+
+                <h2>Typical booking</h2>
+                <ul>
+                    <li>3–5 hours service</li>
+                    <li>20–80 guests</li>
+                    <li>Auckland-wide travel</li>
+                </ul>
+            </div>
+
+            <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
+        titleText='Want a bartender for your house party?',
+        bodyText='Send date, suburb, and guest count. We’ll reply with options.',
+        primaryHref='/#enquiry',
+        primaryText='Check Availability',
+        secondaryHref='/gallery',
+        secondaryText='See Gallery'
+      )}"></th:block>
+        </div>
+    </section>
+</main>
+
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
+</body>
+</html>
