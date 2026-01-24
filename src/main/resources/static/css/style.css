@@ -505,3 +505,10 @@ input:focus, select:focus, textarea:focus{
 .services-dropdown.is-open {
   display: block;
 }
+#servicesDropdown {
+  display: none !important;
+}
+
+#servicesDropdown.is-open {
+  display: block !important;
+}
