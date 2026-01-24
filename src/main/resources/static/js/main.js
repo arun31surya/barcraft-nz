@@ -1,5 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+// =========================
+// SERVICES DROPDOWN TOGGLE
+// =========================
+(function initServicesDropdown() {
+  const toggle = document.querySelector(".services-toggle");
+  const menu = document.getElementById("servicesDropdown");
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOpen = menu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  // close on click outside
+  document.addEventListener("click", (e) => {
+    if (!menu.classList.contains("is-open")) return;
+    if (toggle.contains(e.target) || menu.contains(e.target)) return;
+    closeMenu();
+  });
+
+  // close on ESC
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+})();
+
   // =========================
   // 1) GALLERY LIGHTBOX (safe)
   // =========================

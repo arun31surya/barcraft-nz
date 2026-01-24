@@ -28,6 +28,11 @@
 
                 <div class="gallery-item"><img src="/images/bartender-hero.jpg" alt="Bartender service"></div>
             </div>
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox" aria-hidden="true">
+                <button type="button" class="lightbox-close" aria-label="Close image">×</button>
+                <img id="lightbox-img" class="lightbox-img" alt="">
+            </div>
 
             <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
         titleText='Want this setup at your event?',

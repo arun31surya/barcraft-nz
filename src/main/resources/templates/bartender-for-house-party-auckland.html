@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<th:block th:replace="~{fragments/header :: head(
-  title='Bartender for House Party Auckland | BarCraft NZ',
-  description='Hire a professional bartender for your Auckland house party. BYO alcohol, glassware available. Fast quote and premium service.'
-)}"></th:block>
+<head>
+    <th:block th:replace="~{fragments/header :: head(
+    title='Bartender for House Party Auckland | Premium Home Bar Service | BarCraft NZ',
+    description='Hire a professional bartender for your Auckland house party. BYO alcohol, premium bar setup, glassware options, and fast service. Get a clean quote from BarCraft NZ.'
+  )}"></th:block>
+</head>
 
 <body>
 <th:block th:replace="~{fragments/header :: siteHeader(active='services')}"></th:block>
@@ -12,36 +14,127 @@
 <main>
     <section class="section section-dark">
         <div class="section-inner">
-            <h1>Bartender for House Party Auckland</h1>
-            <p class="section-lead">
-                Clean, fast service for 18ths, 21sts, birthdays, and home gatherings.
-                BYO alcohol, we handle the bar setup and service.
-            </p>
 
-            <div class="content-card">
-                <h2>How we keep house parties smooth</h2>
+            <header>
+                <h1>Bartender for House Party Auckland</h1>
+                <p class="section-lead">
+                    Want your house party to feel premium without chaos? BarCraft NZ provides a professional bartender,
+                    a clean mobile bar setup, and service flow that keeps drinks moving. BYO alcohol, we’ll guide the rest.
+                </p>
+            </header>
+
+            <section class="content-card">
+                <h2>House party bartenders in Auckland, built for speed and vibe</h2>
+                <p>
+                    A house party can go wrong fast: long queues, messy benches, random bottle “stations”, and someone
+                    getting stuck mixing drinks all night instead of hosting. Hiring a <strong>bartender for a house party in Auckland</strong>
+                    is about more than pouring. It’s about managing the pace, keeping the bar clean, and serving a menu that works for your crowd.
+                </p>
+                <p>
+                    We work across <strong>Auckland CBD</strong>, <strong>North Shore</strong>, <strong>West Auckland</strong>,
+                    <strong>East Auckland</strong>, and <strong>South Auckland</strong>. You’ll get a proper bar footprint,
+                    professional tools, and a simple system that keeps the energy up.
+                </p>
+
                 <ul>
-                    <li>Tight drink menu options for speed</li>
-                    <li>Proper setup, tools, and pack-down</li>
-                    <li>Glassware available (quoted per guest count)</li>
+                    <li><strong>Fast service</strong> with a menu designed to reduce waiting</li>
+                    <li><strong>Clean bar area</strong> so your place stays tidy</li>
+                    <li><strong>BYO alcohol</strong>, you control brands and budget</li>
+                    <li><strong>Glassware options</strong> depending on guest count and package</li>
                 </ul>
 
-                <h2>Typical booking</h2>
+                <p>
+                    If you’re comparing options, start with <a th:href="@{/packages}">packages</a>.
+                    If you want to see real setups, check the <a th:href="@{/gallery}">gallery</a>.
+                </p>
+            </section>
+
+            <section class="content-card">
+                <h2>What you get when you hire BarCraft NZ for a house party</h2>
+                <p>
+                    We keep it simple and practical. House parties need speed and consistency, not a menu that takes two minutes per drink.
+                    We’ll recommend a tight list that still feels premium and covers different tastes.
+                </p>
+
                 <ul>
-                    <li>3–5 hours service</li>
-                    <li>20–80 guests</li>
-                    <li>Auckland-wide travel</li>
+                    <li><strong>Professional bartender service</strong> with a calm, controlled flow</li>
+                    <li><strong>Premium bar setup</strong> that looks sharp and photographs well</li>
+                    <li><strong>Menu guidance</strong> for cocktails, mocktails, and crowd-friendly classics</li>
+                    <li><strong>Shopping guidance</strong> for alcohol quantities (so you don’t overbuy)</li>
+                    <li><strong>Pack-down</strong> so you’re not left with a mess at the end</li>
                 </ul>
-            </div>
+
+                <p>
+                    If your event is bigger than a typical house party (or you want a full bar look),
+                    view the main <a th:href="@{/mobile-bar-auckland}">mobile bar Auckland</a> page.
+                </p>
+            </section>
+
+            <section class="content-card">
+                <h2>How it works</h2>
+                <ol>
+                    <li><strong>Send your date + Auckland area</strong> (CBD, North Shore, West, East, or South).</li>
+                    <li><strong>Tell us guest count</strong> and expected hours.</li>
+                    <li><strong>Choose your bar style</strong>, curated cocktails, simple classics, or a speed-focused list.</li>
+                    <li><strong>We reply with a clean package</strong> including what’s included and options (like glassware).</li>
+                    <li><strong>Lock it in</strong> and we guide alcohol quantities and service flow so you can host.</li>
+                </ol>
+            </section>
+
+            <section class="content-card">
+                <h2>Mini FAQ</h2>
+                <dl>
+                    <dt>Do you supply alcohol for house parties?</dt>
+                    <dd>
+                        No. We run <strong>BYO alcohol</strong>. You choose brands and budget, and we can guide quantities and what to buy.
+                    </dd>
+
+                    <dt>How many guests is this suited for?</dt>
+                    <dd>
+                        Typical house party bookings are around 20–80 guests, but it depends on space, hours, and menu complexity.
+                    </dd>
+
+                    <dt>Do you provide glassware?</dt>
+                    <dd>
+                        Glassware can be available depending on guest count and package. Mention it in your enquiry so it’s included in the quote.
+                    </dd>
+
+                    <dt>What’s the best drink menu for a house party?</dt>
+                    <dd>
+                        A short curated list wins. It keeps service fast and guests happier. If you want a full breakdown,
+                        check <a th:href="@{/packages}">packages</a> for options.
+                    </dd>
+
+                    <dt>Can you do weddings or corporate events too?</dt>
+                    <dd>
+                        Yes. Those have different service needs. See
+                        <a th:href="@{/wedding-bar-service-auckland}">wedding bar service Auckland</a>
+                        or <a th:href="@{/corporate-event-bar-auckland}">corporate event bar Auckland</a>.
+                    </dd>
+                </dl>
+            </section>
+
+            <section class="content-card">
+                <h2>Check availability</h2>
+                <p>
+                    Send your date, Auckland area, guest count, and how many hours you’re thinking. We’ll reply with a clean quote and package options.
+                </p>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:+64272613669">+64 27 261 3669</a><br>
+                    <strong>Email:</strong> <a href="mailto:info@barcraft.co.nz">info@barcraft.co.nz</a><br>
+                    <strong>Enquiry form:</strong> <a th:href="@{/#enquiry}">Request a quote</a>
+                </p>
+            </section>
 
             <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
         titleText='Want a bartender for your house party?',
-        bodyText='Send date, suburb, and guest count. We’ll reply with options.',
+        bodyText='Send date, Auckland area, and guest count. We’ll reply with clean options.',
         primaryHref='/#enquiry',
         primaryText='Check Availability',
         secondaryHref='/gallery',
         secondaryText='See Gallery'
       )}"></th:block>
+
         </div>
     </section>
 </main>

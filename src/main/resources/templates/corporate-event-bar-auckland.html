@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<th:block th:replace="~{fragments/header :: head(
-  title='Corporate Event Bar Auckland | Professional Mobile Bar | BarCraft NZ',
-  description='Corporate event bar service in Auckland. Premium mobile bar setup, professional bartender service, glassware available. BYO alcohol. Request a quote.'
-)}"></th:block>
+<head>
+    <th:block th:replace="~{fragments/header :: head(
+    title='Corporate Event Bar Auckland | Professional Mobile Bar Service | BarCraft NZ',
+    description='Corporate event bar service in Auckland with a premium mobile bar setup and professional bartenders. BYO alcohol, glassware options, fast clean packages. Request a quote from BarCraft NZ.'
+  )}"></th:block>
+</head>
 
 <body>
 <th:block th:replace="~{fragments/header :: siteHeader(active='services')}"></th:block>
@@ -12,30 +14,145 @@
 <main>
     <section class="section section-dark">
         <div class="section-inner">
-            <h1>Corporate Event Bar Auckland</h1>
-            <p class="section-lead">
-                Corporate events need clean execution. We run a professional bar experience that matches your brand.
-                BYO alcohol. Glassware available.
-            </p>
 
-            <div class="content-card">
-                <h2>What makes it corporate-ready</h2>
+            <header>
+                <h1>Corporate Event Bar Auckland</h1>
+                <p class="section-lead">
+                    Corporate events need clean execution. BarCraft NZ runs a premium mobile bar experience that stays professional,
+                    serves fast, and fits your brand. You bring the alcohol, we bring the bar setup, service flow, and glassware options.
+                </p>
+            </header>
+
+            <section class="content-card">
+                <h2>Corporate bar service in Auckland that looks premium and runs fast</h2>
+                <p>
+                    A corporate bar is different from a house party bar. The expectations are higher, the venue rules can be stricter,
+                    and the bar has to feel polished. If you’re searching for a <strong>corporate event bar in Auckland</strong>,
+                    the key is consistency: drinks built the same way every time, speed without mess, and a setup that looks deliberate.
+                </p>
+                <p>
+                    We cover <strong>Auckland CBD</strong>, the <strong>North Shore</strong>, <strong>West Auckland</strong>,
+                    <strong>East Auckland</strong>, and <strong>South Auckland</strong>. Whether it’s an office function, brand activation,
+                    awards night, or end-of-year event, the bar should support the event, not distract from it.
+                </p>
+
                 <ul>
-                    <li>Professional presentation and service flow</li>
-                    <li>Fast service with a focused menu</li>
-                    <li>Setup and pack-down handled properly</li>
-                    <li>Glassware options based on event size</li>
+                    <li><strong>BYO alcohol</strong>, you control brands, budget, and compliance requirements</li>
+                    <li><strong>Premium mobile bar setup</strong> that photographs well and stays tidy</li>
+                    <li><strong>Fast service flow</strong> designed to reduce queues at peak times</li>
+                    <li><strong>Professional presentation</strong> suited to corporate venues and clients</li>
                 </ul>
-            </div>
+
+                <p>
+                    If your event is more of a private party vibe, you may prefer:
+                    <a th:href="@{/mobile-bar-auckland}">mobile bar Auckland</a>.
+                </p>
+            </section>
+
+            <section class="content-card">
+                <h2>What makes BarCraft NZ corporate-ready</h2>
+                <p>
+                    Corporate events succeed when everything feels under control. We keep the bar structured and efficient,
+                    so your team can focus on hosting instead of troubleshooting.
+                </p>
+
+                <ul>
+                    <li><strong>Focused menu options</strong> to keep speed high and quality consistent</li>
+                    <li><strong>Clean setup and pack-down</strong> that respects venue rules</li>
+                    <li><strong>Professional bartender service</strong> with controlled pacing (no chaos, no mess)</li>
+                    <li><strong>Glassware options</strong> depending on guest count and package</li>
+                    <li><strong>Simple quoting</strong> with clear inclusions and next steps</li>
+                </ul>
+
+                <p>
+                    For what’s included and package options, see:
+                    <a th:href="@{/packages}">packages</a>.
+                </p>
+            </section>
+
+            <section class="content-card">
+                <h2>Menus that work for corporate events</h2>
+                <p>
+                    This is where people mess up. A huge cocktail list sounds impressive, but it slows service and creates queues.
+                    For corporate events, a tight menu wins, guests get served faster, and the bar stays clean.
+                </p>
+
+                <ul>
+                    <li><strong>2–4 signature cocktails</strong> that match your event vibe</li>
+                    <li><strong>High-speed classics</strong> for broad appeal and consistent builds</li>
+                    <li><strong>Mocktails</strong> so non-drinkers still feel included</li>
+                    <li><strong>Service pacing</strong> aligned to speeches and key moments</li>
+                </ul>
+
+                <p>
+                    If this is actually a wedding-style event (formal timeline, reception structure), use:
+                    <a th:href="@{/wedding-bar-service-auckland}">wedding bar service Auckland</a>.
+                </p>
+            </section>
+
+            <section class="content-card">
+                <h2>How it works</h2>
+                <ol>
+                    <li><strong>Send your date + Auckland area</strong> (CBD, North Shore, West, East, or South).</li>
+                    <li><strong>Tell us the event format</strong> (office function, client night, brand activation, awards, EOY party).</li>
+                    <li><strong>Share guest count + timing</strong> (start time, finish time, peak period).</li>
+                    <li><strong>Select a menu style</strong> (signature cocktails, classics, mocktails).</li>
+                    <li><strong>We reply with a clean package</strong> and availability, then lock it in.</li>
+                </ol>
+            </section>
+
+            <section class="content-card">
+                <h2>Mini FAQ</h2>
+                <dl>
+                    <dt>Do you supply alcohol for corporate events?</dt>
+                    <dd>
+                        No, it’s <strong>BYO alcohol</strong>. You control brands and budget. We can guide quantities and a shopping list.
+                    </dd>
+
+                    <dt>Do you provide glassware?</dt>
+                    <dd>
+                        Glassware options are available depending on guest count and package. Mention it in your enquiry so it’s included in the quote.
+                    </dd>
+
+                    <dt>How much does a corporate event bar in Auckland cost?</dt>
+                    <dd>
+                        It depends on guest count, hours, menu complexity, and travel. The quickest route is an enquiry with your details for a clear quote.
+                    </dd>
+
+                    <dt>Can you handle large groups?</dt>
+                    <dd>
+                        Yes, but speed is planning. For larger groups we typically recommend a focused menu to keep queues down.
+                    </dd>
+
+                    <dt>What if this is actually a house party or birthday?</dt>
+                    <dd>
+                        Then you’ll probably want:
+                        <a th:href="@{/bartender-for-house-party-auckland}">house party bartender Auckland</a>.
+                    </dd>
+                </dl>
+            </section>
+
+            <section class="content-card">
+                <h2>Request a corporate quote</h2>
+                <p>
+                    Send your date, guest count, Auckland area, and the event format. We’ll reply with a clean package and next steps.
+                </p>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:+64272613669">+64 27 261 3669</a><br>
+                    <strong>Email:</strong> <a href="mailto:info@barcraft.co.nz">info@barcraft.co.nz</a><br>
+                    <strong>Enquiry form:</strong> <a th:href="@{/#enquiry}">Request a quote</a>
+                </p>
+            </section>
 
             <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
         titleText='Need a corporate quote?',
-        bodyText='Send date, location, guest count, and event format. We reply fast.',
+        bodyText='Send date, Auckland area, guest count, and event format. We reply fast with a clean package.',
         primaryHref='/#enquiry',
         primaryText='Check Availability',
         secondaryHref='/gallery',
         secondaryText='See Gallery'
       )}"></th:block>
+
         </div>
     </section>
 </main>

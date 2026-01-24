@@ -69,6 +69,11 @@ public class WebController {
     public String success() {
         return "success";
     }
+    @GetMapping("/house-party-bartender-auckland")
+    public String redirectHousePartyAlias() {
+        return "redirect:/bartender-for-house-party-auckland";
+    }
+
     @ModelAttribute("canonicalUrl")
     public String canonicalUrl(HttpServletRequest request) {
         return ServletUriComponentsBuilder

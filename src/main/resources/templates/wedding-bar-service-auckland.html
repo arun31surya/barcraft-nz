@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<th:block th:replace="~{fragments/header :: head(
-  title='Wedding Bar Service Auckland | BarCraft NZ',
-  description='Wedding bar service in Auckland with a premium mobile bar setup and professional bartender. BYO alcohol, glassware available. Request a quote.'
-)}"></th:block>
+<head>
+  <th:block th:replace="~{fragments/header :: head(
+    title='Wedding Bar Service Auckland | Premium Mobile Bar & Bartenders | BarCraft NZ',
+    description='Wedding bar service in Auckland with a premium mobile bar setup and professional bartenders. BYO alcohol, glassware options, fast clean packages. Request a quote from BarCraft NZ.'
+  )}"></th:block>
+</head>
 
 <body>
 <th:block th:replace="~{fragments/header :: siteHeader(active='services')}"></th:block>
@@ -12,37 +14,146 @@
 <main>
   <section class="section">
     <div class="section-inner">
-      <h1>Wedding Bar Service Auckland</h1>
-      <p class="section-lead">
-        A premium bar that fits your wedding style, with service flow that keeps guests happy.
-        BYO alcohol. Glassware available.
-      </p>
 
-      <div class="content-card">
-        <h2>Wedding-friendly execution</h2>
+      <header>
+        <h1>Wedding Bar Service Auckland</h1>
+        <p class="section-lead">
+          BarCraft NZ provides a premium wedding bar setup and professional service across Auckland.
+          You bring the alcohol, we bring the bar, the tools, and the service flow that keeps guests happy from speeches to last call.
+        </p>
+      </header>
+
+      <section class="content-card">
+        <h2>Auckland wedding bar service that runs smooth, not chaotic</h2>
+        <p>
+          Weddings are not the place for a “figure it out on the night” bar. Timing matters, arrivals, speeches,
+          dinner service, first dance, and late-night rounds all have different energy. A strong <strong>wedding bar service in Auckland</strong>
+          is about pace and planning, not just cocktails.
+        </p>
+        <p>
+          We work across <strong>Auckland CBD</strong>, the <strong>North Shore</strong>, <strong>West Auckland</strong>,
+          <strong>East Auckland</strong>, and <strong>South Auckland</strong>. Whether you’re hosting at a private venue,
+          a home wedding, or a function space, the goal is the same: a bar that looks premium and serves fast.
+        </p>
+
         <ul>
-          <li>Styled premium setup for photos</li>
-          <li>Simple menu planning to avoid queues</li>
-          <li>Glassware options by guest count</li>
-          <li>Setup and pack-down with minimal disruption</li>
+          <li><strong>Premium setup</strong> that photographs well and keeps the bar area tidy</li>
+          <li><strong>Professional bartenders</strong> who keep service calm and consistent</li>
+          <li><strong>Service flow planning</strong> to reduce queues and avoid bottlenecks</li>
+          <li><strong>BYO alcohol</strong>, you control brands and budget</li>
         </ul>
 
-        <h2>Perfect for</h2>
+        <p>
+          If you’re looking for the general service overview first, see:
+          <a th:href="@{/mobile-bar-auckland}">mobile bar Auckland</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What you get with BarCraft NZ</h2>
+        <p>
+          You’re paying for an experience that feels polished. That means the bar looks right, the menu makes sense,
+          and guests don’t spend half the night waiting for drinks.
+        </p>
+
         <ul>
-          <li>Receptions, engagement parties, bridal events</li>
-          <li>Small and medium weddings</li>
-          <li>Private venues and home weddings</li>
+          <li><strong>Wedding-friendly bar setup</strong> with a clean, premium look</li>
+          <li><strong>Menu guidance</strong> to balance speed and variety (cocktails, classics, mocktails)</li>
+          <li><strong>Glassware options</strong> depending on guest count and package</li>
+          <li><strong>Setup and pack-down</strong> with minimal disruption to your venue</li>
+          <li><strong>Alcohol quantity guidance</strong> so you don’t overbuy or run dry early</li>
         </ul>
-      </div>
+
+        <p>
+          Want a clear breakdown of inclusions and options? Start here:
+          <a th:href="@{/packages}">packages</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Wedding bar styles that work in real life</h2>
+        <p>
+          The best wedding bars are simple on purpose. A tight menu serves faster, keeps quality consistent,
+          and makes your alcohol spend go further. We’ll help you pick a style that fits your crowd and venue rules.
+        </p>
+
+        <ul>
+          <li><strong>Curated cocktails</strong> for a premium feel without slowing service</li>
+          <li><strong>Classic mixed drinks</strong> for speed and broad appeal</li>
+          <li><strong>Mocktail options</strong> so everyone feels included</li>
+          <li><strong>Smart pacing</strong> around speeches and key moments</li>
+        </ul>
+
+        <p>
+          If your event is a work function or brand night, don’t force a wedding-style menu.
+          Use the corporate page instead:
+          <a th:href="@{/corporate-event-bar-auckland}">corporate event bar Auckland</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>How it works</h2>
+        <ol>
+          <li><strong>Send your date + Auckland area</strong> (CBD, North Shore, West, East, or South).</li>
+          <li><strong>Share venue type</strong> and rough timeline (ceremony, reception start, finish time).</li>
+          <li><strong>Tell us guest count</strong> and whether you want glassware included.</li>
+          <li><strong>We reply with a clean package</strong> and options that match your event style.</li>
+          <li><strong>Lock it in</strong> and we help you plan alcohol quantities and bar flow.</li>
+        </ol>
+      </section>
+
+      <section class="content-card">
+        <h2>Mini FAQ</h2>
+        <dl>
+          <dt>Do you supply alcohol for weddings?</dt>
+          <dd>
+            No, we run <strong>BYO alcohol</strong>. You control brands and budget. We can guide a shopping list and quantities.
+          </dd>
+
+          <dt>Can you provide glassware?</dt>
+          <dd>
+            Glassware options are available depending on guest count and package. Mention it in your enquiry so it’s included in the quote.
+          </dd>
+
+          <dt>How much does wedding bar service in Auckland cost?</dt>
+          <dd>
+            It depends on guest count, service hours, venue access, and menu complexity. The fastest way is to send your details for a clean quote.
+          </dd>
+
+          <dt>Do you work with private venues and home weddings?</dt>
+          <dd>
+            Yes, as long as there’s a safe, practical space for a bar and service lane. We’ll confirm the setup details during quoting.
+          </dd>
+
+          <dt>Can you do engagement parties or bridal events too?</dt>
+          <dd>
+            Yes. If it’s more like a house party vibe, you may prefer:
+            <a th:href="@{/bartender-for-house-party-auckland}">house party bartender Auckland</a>.
+          </dd>
+        </dl>
+      </section>
+
+      <section class="content-card">
+        <h2>Get a wedding quote</h2>
+        <p>
+          Send your date, guest count, Auckland area, and service timing. We’ll reply with a clean package and next steps.
+        </p>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+64272613669">+64 27 261 3669</a><br>
+          <strong>Email:</strong> <a href="mailto:info@barcraft.co.nz">info@barcraft.co.nz</a><br>
+          <strong>Enquiry form:</strong> <a th:href="@{/#enquiry}">Request a quote</a>
+        </p>
+      </section>
 
       <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
         titleText='Want a wedding quote?',
-        bodyText='Send your date, venue suburb, guest count, and service time.',
+        bodyText='Send date, Auckland area, guest count, and service time. We’ll reply with a clean package.',
         primaryHref='/#enquiry',
         primaryText='Check Availability',
         secondaryHref='/packages',
         secondaryText='View Packages'
       )}"></th:block>
+
     </div>
   </section>
 </main>
