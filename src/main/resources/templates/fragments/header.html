@@ -1,74 +1,67 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
+<!-- templates/fragments/header.html -->
+<th:block xmlns:th="http://www.thymeleaf.org">
 
-<!-- ===================== -->
-<!-- HEAD fragment -->
-<!-- ===================== -->
-<th:block th:fragment="head(title, description)">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HEAD fragment -->
+    <th:block th:fragment="head(title, description)">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title th:text="${title}">BarCraft NZ</title>
-    <meta name="description" th:content="${description}">
-    <meta name="robots" content="index,follow">
+        <title th:text="${title}">BarCraft NZ</title>
+        <meta name="description" th:content="${description}">
+        <meta name="robots" content="index,follow">
 
-    <!-- Flatpickr CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <!-- Flatpickr CSS only (JS goes in footer) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" th:content="${title}">
-    <meta property="og:description" th:content="${description}">
-    <meta property="og:url" th:content="${canonicalUrl}">
-    <meta property="og:image" content="https://barcraft.co.nz/images/bartender-hero.jpg">
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" th:content="${title}">
+        <meta property="og:description" th:content="${description}">
+        <meta property="og:url" content="https://barcraft.co.nz">
+        <meta property="og:image" content="https://barcraft.co.nz/images/bartender-hero.jpg">
 
-    <!-- Your CSS -->
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</th:block>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </th:block>
 
-<!-- ===================== -->
-<!-- SITE HEADER / NAV fragment -->
-<!-- ===================== -->
-<header class="site-header" th:fragment="siteHeader(active)">
-    <div class="site-header-inner">
-        <a class="brand" th:href="@{/}">
-            <img th:src="@{/images/logo.png}" alt="BarCraft NZ Logo" class="brand-logo">
-            <span class="brand-name">BarCraft NZ</span>
-        </a>
+    <!-- NAV fragment -->
+    <header class="site-header" th:fragment="siteHeader(active)">
+        <div class="site-header-inner">
+            <a class="brand" th:href="@{/}">
+                <img th:src="@{/images/logo.png}" alt="BarCraft NZ Logo" class="brand-logo">
+                <span class="brand-name">BarCraft NZ</span>
+            </a>
 
-        <nav class="nav">
-            <a th:href="@{/packages}"
-               th:classappend="${active}=='packages' ? ' is-active' : ''">Packages</a>
+            <nav class="nav">
+                <a th:href="@{/packages}"
+                   th:classappend="${active}=='packages' ? ' is-active' : ''">Packages</a>
 
-            <a th:href="@{/gallery}"
-               th:classappend="${active}=='gallery' ? ' is-active' : ''">Gallery</a>
+                <a th:href="@{/gallery}"
+                   th:classappend="${active}=='gallery' ? ' is-active' : ''">Gallery</a>
 
-            <!-- Services (hamburger + dropdown) -->
-            <div class="services-nav"
-                 th:classappend="${active}=='services' ? ' is-active' : ''">
+                <!-- Services dropdown -->
+                <div class="services-nav"
+                     th:classappend="${active}=='services' ? ' is-active' : ''">
 
-                <button type="button"
-                        class="services-toggle"
-                        aria-label="Open services menu"
-                        aria-expanded="false"
-                        aria-controls="servicesDropdown">
-                    <span class="hamburger" aria-hidden="true"></span>
-                    <span class="services-label">Services</span>
-                </button>
+                    <button type="button"
+                            class="services-toggle"
+                            aria-label="Open services menu"
+                            aria-expanded="false"
+                            aria-controls="servicesDropdown">
+                        <span class="hamburger" aria-hidden="true"></span>
+                        <span class="services-label">Services</span>
+                    </button>
 
-                <div id="servicesDropdown" class="services-dropdown" role="menu">
-                    <a role="menuitem" th:href="@{/mobile-bar-auckland}">Mobile Bar Auckland</a>
-                    <a role="menuitem" th:href="@{/bartender-for-house-party-auckland}">House Party Bartender Auckland</a>
-                    <a role="menuitem" th:href="@{/wedding-bar-service-auckland}">Wedding Bar Service Auckland</a>
-                    <a role="menuitem" th:href="@{/corporate-event-bar-auckland}">Corporate Event Bar Auckland</a>
+                    <div id="servicesDropdown" class="services-dropdown" role="menu">
+                        <a role="menuitem" th:href="@{/mobile-bar-auckland}">Mobile Bar Auckland</a>
+                        <a role="menuitem" th:href="@{/bartender-for-house-party-auckland}">House Party Bartender Auckland</a>
+                        <a role="menuitem" th:href="@{/wedding-bar-service-auckland}">Wedding Bar Service Auckland</a>
+                        <a role="menuitem" th:href="@{/corporate-event-bar-auckland}">Corporate Event Bar Auckland</a>
+                    </div>
                 </div>
-            </div>
 
-            <a th:href="@{/#enquiry}" class="nav-cta">Check Availability</a>
-        </nav>
-    </div>
-</header>
+                <a th:href="@{/#enquiry}" class="nav-cta">Check Availability</a>
+            </nav>
+        </div>
+    </header>
 
-</body>
-</html>
+</th:block>

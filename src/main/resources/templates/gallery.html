@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<th:block th:replace="~{fragments/header :: head(
+<head th:replace="~{fragments/header :: head(
   title='Gallery | BarCraft NZ',
-  description='Photos of BarCraft NZ premium mobile bar setups for house parties, birthdays, private events, weddings, and corporate events.'
-)}"></th:block>
+  description='Photos of BarCraft NZ premium mobile bar setups for house parties, birthdays, weddings, and corporate events.'
+)}"></head>
 
 <body>
-<th:block th:replace="~{fragments/header :: siteHeader(active='gallery')}"></th:block>
+
+<header th:replace="~{fragments/header :: siteHeader(active='gallery')}"></header>
 
 <main>
     <section class="section section-dark">
@@ -16,36 +16,27 @@
             <p class="section-lead">Premium black and gold setup, built for photos.</p>
 
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="/images/portable-bar-1.jpg" alt="Portable bar setup 1"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-2.jpg.JPG" alt="Portable bar setup 2"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-3.jpg" alt="Portable bar setup 3"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-4.jpg" alt="Portable bar setup 4"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-5.jpg" alt="Portable bar setup 4"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-6.jpg" alt="Portable bar setup 4"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-7.jpg" alt="Portable bar setup 4"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-8.jpg" alt="Portable bar setup 4"></div>
-                <div class="gallery-item"><img src="/images/portable-bar-11.jpg" alt="Portable bar setup 4"></div>
-
-                <div class="gallery-item"><img src="/images/bartender-hero.jpg" alt="Bartender service"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-1.jpg}" alt="Portable bar 1"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-2.jpg.JPG}" alt="Portable bar 2"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-3.jpg}" alt="Portable bar 3"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-4.jpg}" alt="Portable bar 4"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-5.jpg}" alt="Portable bar 5"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-6.jpg}" alt="Portable bar 6"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-7.jpg}" alt="Portable bar 7"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-8.jpg}" alt="Portable bar 8"></div>
+                <div class="gallery-item"><img th:src="@{/images/portable-bar-11.jpg}" alt="Portable bar 11"></div>
+                <div class="gallery-item"><img th:src="@{/images/bartender-hero.jpg}" alt="Bartender hero"></div>
             </div>
-            <!-- Lightbox -->
+
             <div id="lightbox" class="lightbox" aria-hidden="true">
-                <button type="button" class="lightbox-close" aria-label="Close image">×</button>
-                <img id="lightbox-img" class="lightbox-img" alt="">
+                <button type="button" class="lightbox-close" aria-label="Close">×</button>
+                <img id="lightbox-img" alt="Enlarged image">
             </div>
-
-            <th:block th:replace="~{fragments/cta-strip :: ctaStrip(
-        titleText='Want this setup at your event?',
-        bodyText='BYO alcohol. Glassware available. Fast quoting.',
-        primaryHref='/#enquiry',
-        primaryText='Check Availability',
-        secondaryHref='/packages',
-        secondaryText='View Packages'
-      )}"></th:block>
         </div>
     </section>
 </main>
 
-<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
+<footer th:replace="~{fragments/footer :: siteFooter}"></footer>
+
 </body>
 </html>
