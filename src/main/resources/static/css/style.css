@@ -512,3 +512,32 @@ input:focus, select:focus, textarea:focus{
 #servicesDropdown.is-open {
   display: block !important;
 }
+/* Header quick actions */
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:auto;
+}
+
+.nav-home,
+.nav-call{
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(212,175,55,0.35);
+  color:inherit;
+  font-size:14px;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.nav-call{
+  background: rgba(212,175,55,0.12);
+  border-color: rgba(212,175,55,0.55);
+}
+
+/* On desktop, keep actions near the nav and not stretched */
+@media (min-width: 900px){
+  .header-actions{ margin-left:20px; }
+}
