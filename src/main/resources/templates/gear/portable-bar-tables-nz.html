@@ -11,10 +11,12 @@
   <section class="section section-dark">
     <div class="section-inner">
 
-      <div th:replace="~{fragments/affiliate-disclosure-snippet :: affiliateDisclosureSnippet}"></div>
+      <th:block th:replace="~{fragments/affiliate-disclosure-snippet :: affiliateDisclosureSnippet}"></th:block>
 
       <h1>Best Portable Bar Tables in NZ</h1>
-      <p class="section-lead">For house parties, you want stability first. A wobbly “bar table” is a spill machine.</p>
+      <p class="section-lead">
+        For house parties, you want stability first. A wobbly “bar table” is a spill machine.
+      </p>
 
       <h2>Quick picks</h2>
 
@@ -25,7 +27,9 @@
           <a class="affiliate-link"
              th:href="${links['table']['bestoverall']}"
              target="_blank"
-             rel="nofollow sponsored noopener">Check price</a>
+             rel="nofollow sponsored noopener">
+            Check price
+          </a>
         </div>
 
         <div class="gear-pick">
@@ -34,7 +38,9 @@
           <a class="affiliate-link"
              th:href="${links['table']['budget']}"
              target="_blank"
-             rel="nofollow sponsored noopener">Check price</a>
+             rel="nofollow sponsored noopener">
+            Check price
+          </a>
         </div>
       </div>
 
@@ -61,7 +67,7 @@
   </section>
 </main>
 
-<div th:replace="~{fragments/footer :: siteFooter}"></div>
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
 
 </body>
 </html>

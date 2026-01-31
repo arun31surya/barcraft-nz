@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{fragments/header :: head(title=${title}, description=${description})}"></head>
+<th:block th:replace="~{fragments/header :: head(title=${title}, description=${description})}"></th:block>
 
 <body>
 
-<header th:replace="~{fragments/header :: siteHeader(active='gear')}"></header>
+<th:block th:replace="~{fragments/header :: siteHeader(active='gear')}"></th:block>
 
 <main>
     <section class="section section-dark">
         <div class="section-inner">
 
-            <div th:replace="~{fragments/affiliate-disclosure-snippet :: affiliateDisclosureSnippet}"></div>
+            <th:block th:replace="~{fragments/affiliate-disclosure-snippet :: affiliateDisclosureSnippet}"></th:block>
 
             <h1>Best Cocktail Shaker Sets in NZ</h1>
-            <p class="section-lead">If you buy one kit for house parties, buy the right type. Most “cheap sets” are annoying to use.</p>
+            <p class="section-lead">
+                If you buy one kit for house parties, buy the right type. Most “cheap sets” are annoying to use.
+            </p>
 
             <h2>Quick picks</h2>
 
@@ -61,7 +63,7 @@
     </section>
 </main>
 
-<div th:replace="~{fragments/footer :: siteFooter}"></div>
+<th:block th:replace="~{fragments/footer :: siteFooter}"></th:block>
 
 </body>
 </html>
