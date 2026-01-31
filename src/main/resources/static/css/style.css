@@ -602,3 +602,47 @@ input:focus, select:focus, textarea:focus{
   border: 1px solid rgba(212,175,55,0.35);
   text-decoration: none;
 }
+* Mobile */
+@media (max-width: 768px) {
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #0b0b0b;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    z-index: 999;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+    background: none;
+    border: 1px solid #c9a23f;
+    color: #c9a23f;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+.services-dropdown {
+  display: none;
+}
+
+.services-nav.is-active .services-dropdown {
+  display: block;
+}
