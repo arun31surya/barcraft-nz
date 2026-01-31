@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: head(title=${title}, description=${description})}"></head>
+
+<body>
+
+<header th:replace="~{fragments/header :: siteHeader(active='gear')}"></header>
+
+<main>
+  <section class="section section-dark">
+    <div class="section-inner">
+      <h1>Gear Guide</h1>
+      <p class="section-lead">Practical bar gear picks for NZ home bars and house parties.</p>
+
+      <div class="gear-grid">
+        <a class="gear-card" th:href="@{/gear/cocktail-shaker-sets-nz}">
+          <h2>Cocktail Shaker Sets</h2>
+          <p>Best options for beginners and hosts, what matters, what to avoid.</p>
+          <span class="gear-card-cta">Read guide</span>
+        </a>
+
+        <a class="gear-card" th:href="@{/gear/portable-bar-tables-nz}">
+          <h2>Portable Bar Tables</h2>
+          <p>What to look for in stability, size, portability, and setup speed.</p>
+          <span class="gear-card-cta">Read guide</span>
+        </a>
+      </div>
+
+      <p style="margin-top:18px; opacity:0.85;">
+        <a th:href="@{/affiliate-disclosure}">Affiliate disclosure</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<div th:replace="~{fragments/footer :: siteFooter}"></div>
+
+</body>
+</html>

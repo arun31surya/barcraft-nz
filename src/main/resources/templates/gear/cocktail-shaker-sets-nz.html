@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: head(title=${title}, description=${description})}"></head>
+
+<body>
+
+<header th:replace="~{fragments/header :: siteHeader(active='gear')}"></header>
+
+<main>
+    <section class="section section-dark">
+        <div class="section-inner">
+
+            <div th:replace="~{fragments/affiliate-disclosure-snippet :: affiliateDisclosureSnippet}"></div>
+
+            <h1>Best Cocktail Shaker Sets in NZ</h1>
+            <p class="section-lead">If you buy one kit for house parties, buy the right type. Most “cheap sets” are annoying to use.</p>
+
+            <h2>Quick picks</h2>
+
+            <div class="gear-picks">
+                <div class="gear-pick">
+                    <h3>Best overall</h3>
+                    <p>Good seal, solid weight, and includes the basics you actually use.</p>
+                    <a class="affiliate-link"
+                       th:href="${links['shaker']['bestoverall']}"
+                       target="_blank"
+                       rel="nofollow sponsored noopener">Check price</a>
+                </div>
+
+                <div class="gear-pick">
+                    <h3>Best budget</h3>
+                    <p>Good enough to start, avoid flimsy tins and weak strainers.</p>
+                    <a class="affiliate-link"
+                       th:href="${links['shaker']['budget']}"
+                       target="_blank"
+                       rel="nofollow sponsored noopener">Check price</a>
+                </div>
+            </div>
+
+            <h2>What actually matters</h2>
+            <ul>
+                <li><strong>Type:</strong> Boston shakers seal better for speed. Cobbler shakers are beginner-friendly but can stick.</li>
+                <li><strong>Seal and release:</strong> If it sticks every time, you’ll hate it.</li>
+                <li><strong>Strainer quality:</strong> A bad strainer ruins everything, including your speed.</li>
+                <li><strong>Finish:</strong> Matte hides fingerprints. Mirror looks premium but shows everything.</li>
+            </ul>
+
+            <h2>What to avoid</h2>
+            <ul>
+                <li>Huge “30-piece” kits full of useless junk tools</li>
+                <li>Ultra-thin tins that dent and leak</li>
+                <li>Plastic strainers</li>
+            </ul>
+
+            <p style="margin-top:18px;">
+                <a th:href="@{/gear}">Back to Gear Guide</a>
+            </p>
+
+        </div>
+    </section>
+</main>
+
+<div th:replace="~{fragments/footer :: siteFooter}"></div>
+
+</body>
+</html>

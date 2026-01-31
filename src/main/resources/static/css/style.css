@@ -538,6 +538,67 @@ input:focus, select:focus, textarea:focus{
 }
 
 /* On desktop, keep actions near the nav and not stretched */
-@media (min-width: 900px){
-  .header-actions{ margin-left:20px; }
+.header-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+@media (max-width: 900px){
+  .header-actions{ display:flex; }
+}
+/* Gear module */
+.affiliate-disclosure-snippet{
+  font-size: 14px;
+  opacity: 0.9;
+  padding: 10px 12px;
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.gear-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.gear-card{
+  display: block;
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 14px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(0,0,0,0.25);
+}
+
+.gear-card-cta{
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.gear-picks{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 14px 0 18px;
+}
+
+.gear-pick{
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 14px;
+  padding: 16px;
+  background: rgba(0,0,0,0.25);
+}
+
+.affiliate-link{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.35);
+  text-decoration: none;
 }

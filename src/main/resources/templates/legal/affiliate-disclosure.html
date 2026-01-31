@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: head(title=${title}, description=${description})}"></head>
+
+<body>
+
+<header th:replace="~{fragments/header :: siteHeader(active='legal')}"></header>
+
+<main>
+  <section class="section section-dark">
+    <div class="section-inner">
+      <h1>Affiliate Disclosure</h1>
+
+      <p>
+        Some pages on this website contain affiliate links. If you click an affiliate link and make a purchase,
+        BarCraft NZ may earn a commission. This does not increase your price.
+      </p>
+
+      <p>
+        We only recommend items that make sense for home bars, house parties, and event setups.
+        You should always check the seller’s product details, shipping, and warranty before purchasing.
+      </p>
+
+      <p>
+        If you have questions, contact us at
+        <a href="mailto:info@barcraft.co.nz">info@barcraft.co.nz</a>.
+      </p>
+
+      <p style="margin-top:18px;">
+        <a th:href="@{/gear}">Back to Gear Guide</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<div th:replace="~{fragments/footer :: siteFooter}"></div>
+
+</body>
+</html>

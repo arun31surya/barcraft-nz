@@ -32,7 +32,7 @@
                 <span class="brand-name">BarCraft NZ</span>
             </a>
 
-            <!-- ✅ Always-visible actions (especially for mobile) -->
+            <!-- Always-visible actions -->
             <div class="header-actions">
                 <a th:href="@{/}" class="nav-home">Home</a>
                 <a href="tel:+64272613669" class="nav-call">Call 0272613669</a>
@@ -44,6 +44,10 @@
 
                 <a th:href="@{/gallery}"
                    th:classappend="${active}=='gallery' ? ' is-active' : ''">Gallery</a>
+
+                <!-- ✅ NEW: Gear Guide -->
+                <a th:href="@{/gear}"
+                   th:classappend="${active}=='gear' ? ' is-active' : ''">Gear Guide</a>
 
                 <!-- Services dropdown -->
                 <div class="services-nav"
@@ -71,5 +75,4 @@
 
         </div>
     </header>
-
 </th:block>

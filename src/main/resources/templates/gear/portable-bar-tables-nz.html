@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: head(title=${title}, description=${description})}"></head>
+
+<body>
+
+<header th:replace="~{fragments/header :: siteHeader(active='gear')}"></header>
+
+<main>
+  <section class="section section-dark">
+    <div class="section-inner">
+
+      <div th:replace="~{fragments/affiliate-disclosure-snippet :: affiliateDisclosureSnippet}"></div>
+
+      <h1>Best Portable Bar Tables in NZ</h1>
+      <p class="section-lead">For house parties, you want stability first. A wobbly “bar table” is a spill machine.</p>
+
+      <h2>Quick picks</h2>
+
+      <div class="gear-picks">
+        <div class="gear-pick">
+          <h3>Best overall</h3>
+          <p>Stable, fast setup, decent work surface, and doesn’t flex when you shake.</p>
+          <a class="affiliate-link"
+             th:href="${links['table']['bestoverall']}"
+             target="_blank"
+             rel="nofollow sponsored noopener">Check price</a>
+        </div>
+
+        <div class="gear-pick">
+          <h3>Best budget</h3>
+          <p>Works for casual use, but check weight limits and leg locking.</p>
+          <a class="affiliate-link"
+             th:href="${links['table']['budget']}"
+             target="_blank"
+             rel="nofollow sponsored noopener">Check price</a>
+        </div>
+      </div>
+
+      <h2>Buying checklist</h2>
+      <ul>
+        <li><strong>Locking legs:</strong> Non-negotiable.</li>
+        <li><strong>Worktop size:</strong> You need space for ice bucket, tins, and garnish tray.</li>
+        <li><strong>Height:</strong> Too low kills your back, too high feels unstable.</li>
+        <li><strong>Portability:</strong> Carry handle and fold-flat design matters.</li>
+      </ul>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Choosing looks over stability</li>
+        <li>Buying a narrow table that can’t hold tools and ice</li>
+        <li>Ignoring wobble on uneven floors</li>
+      </ul>
+
+      <p style="margin-top:18px;">
+        <a th:href="@{/gear}">Back to Gear Guide</a>
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<div th:replace="~{fragments/footer :: siteFooter}"></div>
+
+</body>
+</html>
