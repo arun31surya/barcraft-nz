@@ -121,16 +121,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".mobile-nav-toggle");
+
+  // MOBILE NAV TOGGLE
+  const mobileToggle = document.querySelector(".mobile-nav-toggle");
   const nav = document.querySelector(".nav");
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+  if (mobileToggle && nav) {
+    mobileToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       nav.classList.toggle("is-open");
-      toggle.setAttribute(
+      mobileToggle.setAttribute(
         "aria-expanded",
         nav.classList.contains("is-open")
       );
     });
   }
+
+  // SERVICES DROPDOWN
+  const servicesToggle = document.querySelector(".services-toggle");
+  const servicesDropdown = document.getElementById("servicesDropdown");
+
+  if (servicesToggle && servicesDropdown) {
+    servicesToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      servicesDropdown.classList.toggle("is-open");
+    });
+
+    document.addEventListener("click", () => {
+      servicesDropdown.classList.remove("is-open");
+    });
+  }
+
 });
