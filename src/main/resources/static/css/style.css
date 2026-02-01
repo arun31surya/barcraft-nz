@@ -639,8 +639,9 @@ input:focus, select:focus, textarea:focus{
     display: none;
   }
 }
-.services-dropdown {
-  display: none;
+/* Make dropdown appear when JS adds .is-open */
+#servicesDropdown { display: none; }
+#servicesDropdown.is-open { display: block; }
 }
 
 .services-nav.is-active .services-dropdown {
