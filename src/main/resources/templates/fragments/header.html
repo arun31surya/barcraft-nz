@@ -1,5 +1,6 @@
 <!-- templates/fragments/header.html -->
-<th:block xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 
     <!-- HEAD fragment -->
     <th:block th:fragment="head(title, description)">
@@ -45,35 +46,23 @@
             </button>
 
             <nav class="nav">
-                <a th:href="@{/packages}"
-                   th:classappend="${active}=='packages' ? ' is-active' : ''">Packages</a>
-
-                <a th:href="@{/gallery}"
-                   th:classappend="${active}=='gallery' ? ' is-active' : ''">Gallery</a>
-
-                <!-- ✅ NEW: Gear Guide -->
-                <a th:href="@{/gear}"
-                   th:classappend="${active}=='gear' ? ' is-active' : ''">Gear Guide</a>
+                <a th:href="@{/packages}">Packages</a>
+                <a th:href="@{/gallery}">Gallery</a>
+                <a th:href="@{/gear}">Gear Guide</a>
 
                 <!-- Services dropdown -->
-                <div class="services-nav"
-                     th:classappend="${active}=='services' ? ' is-active' : ''">
-
-                    <button type="button"
-                            class="services-toggle"
-                            aria-label="Open services menu"
-                            aria-expanded="false"
-                            aria-controls="servicesDropdown">
-                        <span class="hamburger" aria-hidden="true"></span>
+                <div class="services-nav">
+                    <button type="button" class="services-toggle">
+                        <span class="hamburger"></span>
                         <span class="services-label">Services</span>
                     </button>
 
-                    <div id="servicesDropdown" class="services-dropdown" role="menu">
-                        <a role="menuitem" th:href="@{/mobile-bar-auckland}">Mobile Bar Auckland</a>
-                        <a role="menuitem" th:href="@{/bartender-for-house-party-auckland}">House Party Bartender Auckland</a>
-                        <a role="menuitem" th:href="@{/wedding-bar-service-auckland}">Wedding Bar Service Auckland</a>
-                        <a role="menuitem" th:href="@{/corporate-event-bar-auckland}">Corporate Event Bar Auckland</a>
-                        <a role="menuitem" th:href="@{/gear}">Gear Guide</a>
+                    <div id="servicesDropdown" class="services-dropdown">
+                        <a th:href="@{/mobile-bar-auckland}">Mobile Bar Auckland</a>
+                        <a th:href="@{/bartender-for-house-party-auckland}">House Party Bartender Auckland</a>
+                        <a th:href="@{/wedding-bar-service-auckland}">Wedding Bar Service Auckland</a>
+                        <a th:href="@{/corporate-event-bar-auckland}">Corporate Event Bar Auckland</a>
+                        <a th:href="@{/gear}">Gear Guide</a>
                     </div>
                 </div>
 
@@ -82,4 +71,4 @@
 
         </div>
     </header>
-</th:block>
+</html>

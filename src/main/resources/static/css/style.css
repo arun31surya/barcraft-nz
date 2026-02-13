@@ -602,9 +602,18 @@ input:focus, select:focus, textarea:focus{
   border: 1px solid rgba(212,175,55,0.35);
   text-decoration: none;
 }
-* Mobile */
-@media (max-width: 768px) {
+/* ======================================================
+   NAV + SERVICES DROPDOWN (FINAL – CLEAN)
+   ====================================================== */
 
+.site-header,
+.site-header-inner,
+.nav {
+  overflow: visible;
+}
+
+/* ---------- MOBILE NAV ---------- */
+@media (max-width: 991px) {
   .nav {
     display: none;
     position: absolute;
@@ -624,40 +633,51 @@ input:focus, select:focus, textarea:focus{
 
   .mobile-nav-toggle {
     display: inline-flex;
-    background: none;
-    border: 1px solid #c9a23f;
-    color: #c9a23f;
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 20px;
+    margin-left: auto;
+  }
+
+  .nav-home {
+    display: none;
   }
 }
 
-/* Desktop */
-@media (min-width: 769px) {
+/* ---------- DESKTOP ---------- */
+@media (min-width: 992px) {
   .mobile-nav-toggle {
     display: none;
   }
 }
-/* Make dropdown appear when JS adds .is-open */
-#servicesDropdown { display: none; }
-#servicesDropdown.is-open { display: block; }
+
+/* SERVICES DROPDOWN – CLICK BASED */
+
+.services-nav {
+  position: relative;
 }
 
-.services-nav.is-active .services-dropdown {
-  display: block;
+.services-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 220px;
+  z-index: 9999;
 }
-/* Show nav when hamburger is clicked */
-@media (max-width: 980px) {
-  .nav.is-open {
-    display: flex !important;
-    flex-direction: column;
+
+/* DESKTOP */
+@media (min-width: 992px) {
+  .services-nav:hover .services-dropdown {
+    display: block;
   }
+}
 
-  /* Make services dropdown behave inside mobile menu */
+/* MOBILE */
+@media (max-width: 991px) {
   .services-dropdown {
     position: static;
-    margin-top: 8px;
-    box-shadow: none;
+  }
+
+  .services-dropdown.is-open {
+    display: block;
   }
 }
